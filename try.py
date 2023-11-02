@@ -1,12 +1,27 @@
-def combined_time(hours, minutes, seconds):
-    if seconds > 59:
-        minutes += seconds // 60
-        seconds = seconds % 60
+def to_24_hour_clock(hours):
 
-    if minutes > 59:
-        hours += minutes // 60
-        minutes = minutes % 60
+    return hours % 24
 
-    total_time = hours + (minutes / 60) + (seconds / 3600)
+def time_to_utc(utc_offset, time):
+    """ (number, float) -> float
 
-    return total_time
+    Return time at UTC+0, where utc_offset is the number of hours away from
+    UTC+0.
+
+    >>> time_to_utc(+0, 12.0)
+    12.0
+    >>> time_to_utc(+1, 12.0)
+    11.0
+    >>> time_to_utc(-1, 12.0)
+    13.0
+    >>> time_to_utc(-11, 18.0)
+    5.0
+    >>> time_to_utc(-1, 0.0)
+    1.0
+    >>> time_to_utc(-1, 23.0)
+    0.0
+    """
+    time_in_24=time - utc_offset
+    result=to_24_hour_clock(time_in_24)
+    print(result)
+    return result

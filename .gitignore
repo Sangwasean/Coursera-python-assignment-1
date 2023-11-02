@@ -1,0 +1,44 @@
+# Byte-compiled / optimized Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Caches and logs
+*.cache
+*.log
+
+# Environment and virtual environment files
+.env
+.venv
+venv/
+.envrc
+
+# Compiled .pyc files
+*.pyc
+
+# Editor and IDE-specific files
+.vscode/
+.idea/
+
+# User-specific Python files
+*.DS_Store
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebook files
+.ipynb_checkpoints/
+*.ipynb
+
+# Database files
+*.db
+
+# Project-specific files
+config.py
+
+# Other generated files
+*.swp
+*.swo
